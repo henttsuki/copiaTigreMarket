@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi carrito | Tigre Blanco</title>
+    <link rel="stylesheet" href="carrito.css">
+    <script src="carrito.js" defer></script>
+</head>
+<body>
+
+    <header class="encabezado">
+        <h1>Tigre Markert</h1>
+
+        <nav>
+            <a href="index.html">Inicio</a>
+            <a href="carrito.html">Mi carrito</a>
+        </nav>
+    </header>
+
+    <main class="contenedor-carrito">
+
+        <h2>Mi carrito de compras</h2>
+        <p>Revisa los productos que seleccionaste.</p>
+
+        <section id="lista-carrito">
+            <!-- Los productos aparecerán aquí -->
+        </section>
+
+        <section class="resumen-carrito">
+            <h3>Resumen de compra</h3>
+
+            <p>
+                Subtotal:
+                <span id="subtotal">$0.00 MXN</span>
+            </p>
+
+            <h3>
+                Total:
+                <span id="total">$0.00 MXN</span>
+            </h3>
+
+            <button id="confirmar-pedido">
+                Confirmar pedido
+            </button>
+
+            <p id="mensaje" role="status"></p>
+        </section>
+
+    </main>
+
+</body>
+</html>

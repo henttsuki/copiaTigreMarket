@@ -1,0 +1,82 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ventas | Tigre Market</title>
+    <link rel="stylesheet" href="venta.css">
+</head>
+<body>
+
+    <header class="encabezado">
+        <h1>Tigre Market 🐯</h1>
+        <p>Dale una segunda vida a tus productos</p>
+
+        <nav>
+            <a href="index.html">Inicio</a>
+            <a href="compras.html">Compras</a>
+            <a href="ventas.html">Ventas</a>
+            <a href="carrito.html">Carrito</a>
+        </nav>
+    </header>
+
+    <main class="contenedor">
+        <section class="formulario-venta">
+            <h2>Publica tu producto</h2>
+            <p>Llena los siguientes campos para poner tu producto a la venta.</p>
+
+            <form id="formulario-venta">
+                <label for="nombre">Nombre del producto</label>
+                <input type="text" id="nombre"
+                    placeholder="Ej. Mochila universitaria" required>
+
+                <label for="descripcion">Descripción</label>
+                <textarea id="descripcion"
+                    placeholder="Describe tu producto y su estado"
+                    required></textarea>
+
+                <label for="precio">Precio en pesos mexicanos</label>
+                <input type="number" id="precio"
+                    min="1" step="0.01" placeholder="Ej. 180" required>
+
+                <label for="categoria">Categoría</label>
+                <select id="categoria" required>
+                    <option value="">Selecciona una categoría</option>
+                    <option value="Libros">Libros y útiles</option>
+                    <option value="Electrónica">Electrónica</option>
+                    <option value="Ropa">Ropa y accesorios</option>
+                    <option value="Mochilas">Mochilas</option>
+                    <option value="Otros">Otros</option>
+                </select>
+
+                <label for="estado">Estado del producto</label>
+                <select id="estado" required>
+                    <option value="">Selecciona el estado</option>
+                    <option value="Nuevo">Nuevo</option>
+                    <option value="Como nuevo">Como nuevo</option>
+                    <option value="Usado en buen estado">Usado en buen estado</option>
+                </select>
+
+                <label for="imagen">Fotografía del producto</label>
+                <input type="file" id="imagen"
+                    accept="image/jpeg,image/png,image/webp" required>
+
+                <button type="submit">Publicar producto</button>
+            </form>
+        </section>
+
+        <section class="mis-publicaciones">
+            <h2>Mis productos publicados</h2>
+            <div id="lista-publicaciones">
+                <p class="vacio">Todavía no has publicado productos.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 Tigre Market</p>
+    </footer>
+
+    <script src="ventas.js"></script></body>
+</html>

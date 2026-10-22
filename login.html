@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar sesión | Tigre Market</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+
+    <header class="logo-container">
+        <img src="img/logo.png" alt="Logo de Tigre Market" class="logo">
+        <section class="texto">
+            <h1 class="titulo">Tigre Market</h1>
+            <p class="parrafo">Compra y vende entre estudiantes universitarios</p>
+        </section>
+    </header>
+
+    <main class="contenedor">
+
+        <section class="formulario">
+            <h2>Iniciar sesión</h2>
+            <p>Ingresa a tu cuenta para continuar.</p>
+
+            <p id="mensaje-registro" hidden>
+                ¡Registro completado! Ahora puedes iniciar sesión.
+            </p>
+
+            <form id="login">
+
+                <label for="correo-login">Correo electrónico</label></br>
+                <div class="input-container">
+                <input
+                    type="text"
+                    id="correo-login"
+                    name="correo"
+                    placeholder="ejemplo: juanita_23"
+                    autocomplete="off"
+                    pattern="[a-z0-9_]+"
+                    required>
+                    <span class="domain-fixed">@tecnaucalpan.mx</span>
+                    </div>
+                <datalist id="dominios"></datalist>
+                <br>
+
+
+                <label for="contrasena-login">
+                    Contraseña
+                </label>
+                <input
+                    type="password"
+                    id="contrasena-login"
+                    name="contrasena"
+                    placeholder="Escribe tu contraseña"
+                    autocomplete="current-password"
+                    required
+                >
+
+                <button type="submit">Iniciar sesión</button>
+
+            </form>
+            <p class="OMC">
+            <a href="cambio-password.html">¿Olvidaste tu contraseña? </a>
+            </p>
+
+            <p class="nota">
+                ¿Todavía no tienes una cuenta?
+                <a href="registro.html">Crear cuenta</a>
+            </p>
+        </section>
+
+    </main>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+        
+            const formularioLogin = document.getElementById("login");
+        
+            if (formularioLogin) {
+                formularioLogin.addEventListener("submit", function(evento) {
+                    evento.preventDefault();
+        
+                    window.location.href = "./index.html";
+                });
+            }
+        
+        });
+        </script>
+    <script>
+    const formularioLogin = document.getElementById('login');
+
+    formularioLogin.addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        const inputusuario = document.getElementById('correo-login').value.trim();
+
+        const dominioInstitucional = "@tecnaucalpan.mx";
+
+        if (inputusuario === "") {
+            alert("Por favor, ingresa tu usuario.");
+            return;
+        }
+
+        const correoCompleto = inputusuario + dominioInstitucional;
+        console.log("Correo listo para enviar al servidor:", correoCompleto);
+        alert("¡Acceso correcto! Correo completo: " + correoCompleto);
+        const inputUsuario = document.getElementById('correo-login');
+
+    inputUsuario.addEventListener('input', function(event) {
+        let valorLimpio = this.value.toLowerCase().replace(/[^a-z0-9_]/g, '');
+    
+        this.value = valorLimpio;
+});
+    });
+</script>
+</body>
+</html>

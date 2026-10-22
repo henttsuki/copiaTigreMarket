@@ -1,0 +1,204 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compras | Tigre Market</title>
+    <link rel="stylesheet" href="compras.css">
+    <script src="carrito.js" defer></script>
+</head>
+<body>
+
+    <header class="encabezado">
+        <h1>Tigre Market 🐯</h1>
+        <p>Encuentra todo lo que necesitas para la universidad</p>
+
+        <nav>
+            <a href="index.html">Inicio</a>
+            <a href="compras.html">Compras</a>
+            <a href="carrito.html">Carrito</a>
+        </nav>
+    </header>
+
+    <main class="contenedor">
+        <h2>Productos disponibles</h2>
+        <p>Compra y vende entre estudiantes universitarios.</p>
+
+        
+<section class="filtros">
+    <div class="filtro">
+        <label for="filtro-producto">Buscar producto:</label>
+        <input
+            type="text"
+            id="filtro-producto"
+            placeholder="Ej. mochila, libro..."
+        >
+    </div>
+
+    <div class="filtro">
+        <label for="filtro-color">Color:</label>
+        <select id="filtro-color">
+            <option value="todos">Todos los colores</option>
+            <option value="negro">Negro</option>
+            <option value="blanco">Blanco</option>
+            <option value="azul">Azul</option>
+            <option value="rosa">Rosa</option>
+            <option value="rojo">Rojo</option>
+        </select>
+    </div>
+
+    <div class="filtro">
+        <label for="filtro-presupuesto">
+            Presupuesto máximo (MXN):
+        </label>
+        <input
+            type="number"
+            id="filtro-presupuesto"
+            min="0"
+            placeholder="Ej. 300"
+        >
+    </div>
+
+    <button type="button" id="limpiar-filtros">
+        Limpiar filtros
+    </button>
+</section>
+
+
+        <section class="catalogo" id="catalogo">
+
+            <article class="tarjeta-producto"
+            data-producto="mochila universitaria"
+            data-color="negro"
+            data-precio="180">
+
+                <img src="mochila.jpg"
+                     alt="Mochila universitaria"
+                     class="foto-producto">
+
+                <h3>Mochila universitaria</h3>
+                <p>En buen estado, ideal para tus clases.</p>
+                <p class="precio">$180 MXN</p>
+
+                <button class="ver-producto"
+                    data-nombre="Mochila universitaria"
+                    data-descripcion="En buen estado, ideal para tus clases."
+                    data-precio="180">
+                    Ver producto
+                </button>
+
+                <button class="agregar"
+                    data-id="1"
+                    data-nombre="Mochila universitaria"
+                    data-precio="180"
+                    data-imagen="mochila.jpg">
+                    Agregar al carrito
+                </button>
+            </article>
+
+            <article class="tarjeta-producto"
+               data-producto="calculadora científica"
+               data-color="negro"
+              data-precio="250">
+
+                <img src="calculadora.jpg"
+                     alt="Calculadora científica"
+                     class="foto-producto">
+
+                <h3>Calculadora científica</h3>
+                <p>Ideal para matemáticas y otras materias.</p>
+                <p class="precio">$250 MXN</p>
+
+                <button class="ver-producto"
+                    data-nombre="Calculadora científica"
+                    data-descripcion="Ideal para matemáticas y otras materias."
+                    data-precio="250">
+                    Ver producto
+                </button>
+
+                <button class="agregar"
+                    data-id="2"
+                    data-nombre="Calculadora científica"
+                    data-precio="250"
+                    data-imagen="calculadora.jpg">
+                    Agregar al carrito
+                </button>
+            </article>
+
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 Tigre Market</p>
+    </footer>
+
+    <script>
+        document.querySelectorAll(".ver-producto").forEach(function(boton) {
+            boton.addEventListener("click", function() {
+                alert(
+                    boton.dataset.nombre + "\n" +
+                    boton.dataset.descripcion + "\nPrecio: $" +
+                    boton.dataset.precio + " MXN"
+                );
+            });
+        });
+    </script>
+    
+    <script>
+        const buscador = document.getElementById("filtro-producto");
+        const filtroColor = document.getElementById("filtro-color");
+        const filtroPresupuesto = document.getElementById("filtro-presupuesto");
+        const botonLimpiar = document.getElementById("limpiar-filtros");
+
+        function filtrarProductos() {
+            const texto = buscador.value.trim().toLowerCase();
+            const colorElegido = filtroColor.value;
+            const presupuesto = filtroPresupuesto.value;
+
+            const tarjetas = document.querySelectorAll(".tarjeta-producto");
+
+            tarjetas.forEach(function(tarjeta) {
+                const nombre = tarjeta.dataset.producto.toLowerCase();
+                const color = tarjeta.dataset.color.toLowerCase();
+                const precio = Number(tarjeta.dataset.precio);
+
+                const coincideProducto = nombre.includes(texto);
+
+                const coincideColor =
+                    colorElegido === "todos" || color === colorElegido;
+
+                const coincidePrecio =
+                    presupuesto === "" || precio <= Number(presupuesto);
+
+                if (coincideProducto && coincideColor && coincidePrecio) {
+                    tarjeta.style.display = "";
+                } else {
+                    tarjeta.style.display = "none";
+                }
+            });
+        }
+
+        buscador.addEventListener("input", filtrarProductos);
+        filtroColor.addEventListener("change", filtrarProductos);
+        filtroPresupuesto.addEventListener("input", filtrarProductos);
+
+        const parametros = new URLSearchParams(window.location.search);
+const busquedaInicial = parametros.get("buscar");
+
+if (busquedaInicial) {
+    buscador.value = busquedaInicial;
+    filtrarProductos();
+}
+
+        botonLimpiar.addEventListener("click", function() {
+            buscador.value = "";
+            filtroColor.value = "todos";
+            filtroPresupuesto.value = "";
+            filtrarProductos();
+        });
+    </script>
+
+
+</body>
+</html>

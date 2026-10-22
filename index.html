@@ -1,0 +1,92 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tigres Blancos Market</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Tigre Market 🐯</h1>
+        <p>Compra y vende entre estudiantes universitarios GTU</p>
+    </header>
+
+    
+<section class="busqueda-inicio">
+    <h2>¿Qué estás buscando?</h2>
+
+    <form id="formulario-busqueda">
+        <input
+            type="search"
+            id="busqueda-producto"
+            placeholder="Busca mochilas, libros, calculadoras..."
+            aria-label="Buscar productos"
+            required
+        >
+
+        <button type="submit">Buscar 🔎</button>
+    </form>
+</section>
+
+
+    <nav>
+        <a href="index.html">Inicio</a>
+        <a href="compras.html">Compras</a>
+        <a href="venta.html">Vender</a>
+        <a href="carrito.html">Carrito</a>
+        <a href="#">Mi cuenta</a>
+    </nav>
+    
+
+    <main>
+        <h2 id="productos">Encuentra lo que necesitas</h2>
+                <p>Tus artículos a precios accesibles.</p>
+
+            <div class="productos" id="catalogo">
+            <div class="producto">
+                <h3>Mochila universitaria</h3>
+                <img src="pagina web" alt="Mochila universitaria" class="foto-producto">
+                <p>En buen estado.</p>
+                <p class="precio">$180 MXN</p>
+                <button onclick="alert
+                ('Mochila universitaria: en buen estado. Precio: $180 MXN')">Ver producto
+
+                </button>
+                <button class="agregar"
+                data-id="1"
+                data-nombre="Mochila universitaria"
+                data-precio="180">
+                Agregar al carrito
+            </button>
+            </div>
+
+            <div class="producto">
+                <h3>Calculadora científica</h3>
+                <img src="pagina web1" alt="Mochila universitaria" class="foto-producto">
+                <p>Ideal para tus clases.</p>
+                <p class="precio">$250 MXN</p>
+                <button onclick="alert('Calculadora científica: ideal para tus clases. Precio: $250 MXN')">
+                 Ver producto
+            </button>
+
+                <button class="agregar"
+                data-id="2"
+                data-nombre="Calculadora científica"
+                data-precio="250">
+                Agregar al carrito
+            </button>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2026 Tigre Market</p>
+    </footer>
+
+<script src="carrito.js" defer></script>
+
+</body>
+</html>
