@@ -32,7 +32,9 @@
             name="nombre"
             placeholder="Escribe tu nombre completo"
             autocomplete="name"
+             maxlength="25"
             required
+
         >
 
         <label for="edad">Edad</label>
@@ -69,15 +71,25 @@
             autocomplete="tel"
             required
         >
-            <label for="contrasena">Contraseña</label>
-                <input
-                type="password"
-                id="contrasena"
-                name="contrasena"
-                placeholder="Crea una contraseña"
-                minlength="8"
-                autocomplete="new-password"
-                required>
+        <label for="contrasena">Contraseña</label>
+        <div class="password-wrapper" style="position: relative; display: flex; align-items: center;">
+        <input 
+        type="password" 
+        id="contrasena" 
+        name="contrasena" 
+        placeholder="Crea una contraseña" 
+        minlength="8" 
+        autocomplete="new-password" 
+        required
+        style="width: 100%; padding-right: 40px;"
+    >
+        <button type="button" id="toggle-password" title="Mostrar contraseña" style="position: absolute; right: 12px; top: 50%; transform: translateY(-110%); background: none; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; padding: 0;">
+            <svg id="eye-icon" xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 0 24 24" width="20px" fill="none" stroke="#6B7280" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+            <circle cx="12" cy="12" r="3"></circle>
+            </svg>
+        </button>
+</div>
         <ul id="lista-requisitos">
             <li id="req-longitud" class="invalido">Al menos 8 caracteres</li>
             <li id="req-mayuscula" class="invalido">Al menos una letra mayúscula</li>
@@ -172,8 +184,43 @@
             reqespecial.classList.remove('valido');
             reqespecial.classList.add('invalido');
         }
+
     });
+    
     </script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const togglePasswordBtn = document.getElementById('toggle-password');
+        const passwordInput = document.getElementById('contrasena');
+        const eyeIcon = document.getElementById('eye-icon');
+
+        // Verificación de seguridad para evitar errores en consola
+        if (!togglePasswordBtn || !passwordInput || !eyeIcon) {
+            console.error("Error: No se encontró alguno de los elementos del botón de contraseña en el DOM.");
+            return;
+        }
+
+        togglePasswordBtn.addEventListener('click', function() {
+            // Alternar el tipo de input entre password y text
+            const currentType = passwordInput.getAttribute('type');
+            const newType = currentType === 'password' ? 'text' : 'password';
+            passwordInput.setAttribute('type', newType);
+            
+            // Cambiar el dibujo del icono SVG según el estado
+            if (newType === 'text') {
+                eyeIcon.innerHTML = `
+                    <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"></path>
+                    <line x1="1" y1="1" x2="23" y2="23"></line>
+                `;
+            } else {
+                eyeIcon.innerHTML = `
+                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                    <circle cx="12" cy="12" r="3"></circle>
+                `;
+            }
+        });
+    });
+</script>
     <script>
     const formularioLogin = document.getElementById('login');
 

@@ -2,7 +2,7 @@
     box-sizing: border-box;
 }
 header {
-    background-color: #F4A261;
+    background-color: #fa790f;
     text-align: center;
     padding: 10px 10px;
 }
@@ -22,22 +22,28 @@ header {
     height: auto;
 }
 .titulo{
+    color: #061583;
     text-align: center;
     font-size: 80px;
     margin: 0;
     margin-left: 350px;
+    font-family: 'Pacifico',cursive;
+    font-weight: 400;
 }
 .parrafo{
+    color:#061583;
     text-align: center;
     font-size: 20px;
     margin: 0;
     margin-left: 320px;
+    font-family: 'Dancing Script', cursive;
+    font-weight: 400;
 }
 
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background-color: #1E3A8A;
+    background-color: #d2d4d8;
     color: #292929;
 }
 header a {
@@ -66,7 +72,7 @@ header h1 {
 }
 
 h2 {
-    color: #286744;
+    color: #1605b0;
 }
 
 form {
@@ -92,14 +98,14 @@ button {
     padding: 13px;
     border: none;
     border-radius: 8px;
-    background-color: #286744;
+    background-color: #879dbb;
     color: white;
     font-size: 16px;
     cursor: pointer;
 }
 
 button:hover {
-    background-color: #1d5034;
+    background-color: #879DBB;
 }
 
 .nota {
@@ -163,4 +169,9 @@ a {
     user-select: none;
     white-space: nowrap;
     margin-left: 130px;
+}
+input[type="password"]::-ms-reveal,
+input[type="password"]::-ms-clear {
+    display: none;
+    margin-top: 10px;
 }

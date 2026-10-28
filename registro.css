@@ -147,7 +147,7 @@ a {
     height: auto;
 }
 .title{
-    font-family: 'Arial Black', sans-serif;
+    font-family: 'Pacifico', cursive;
     color: #e3ded6;
     font-size: 80px;
     margin: 0;
@@ -155,7 +155,7 @@ a {
     margin-left: 330px;
 }
 .subtitle{
-    font-family: 'Arial', sans-serif;
+    font-family: 'Dancing Script', cursive;
     color: #e3ded6;
     font-size: 20px;
     margin: 0;
@@ -185,4 +185,9 @@ a {
     user-select: none;
     white-space: nowrap;
     margin-left: 130px;
+}
+input[type="password"]::-ms-reveal,
+input[type="password"]::-ms-clear {
+    display: none;
+    margin-top: 10px;
 }
