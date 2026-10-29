@@ -154,5 +154,30 @@
         });
     });
 </script>
+
+    <script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/13.1.0/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/13.1.0/firebase-analytics.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyBnRAQ9ZX82hOCqnML9QqPfBIJNzhSXIHU",
+    authDomain: "tiger-market-73a36.firebaseapp.com",
+    projectId: "tiger-market-73a36",
+    storageBucket: "tiger-market-73a36.firebasestorage.app",
+    messagingSenderId: "219212142513",
+    appId: "1:219212142513:web:364f290d2cc6188c9f8f90",
+    measurementId: "G-N0SN077EY6"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+</script>
+    
 </body>
 </html>
