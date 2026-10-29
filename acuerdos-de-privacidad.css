@@ -1,0 +1,84 @@
+body.pagina-legal {
+    margin: 0;
+    padding: 40px 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #0b1329; /* Fondo azul oscuro profundo idéntico al login */
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.contenedor-legal {
+    width: 100%;
+    max-width: 850px;
+    background: rgba(15, 23, 42, 0.85); /* Tarjeta translúcida con efecto difuminado */
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(245, 158, 11, 0.25); /* Sutil borde naranja corporativo */
+    border-radius: 16px;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+}
+
+.tarjeta-legal h1 {
+    color: #f59e0b; /* Naranja corporativo brillante (igual al título "Iniciar sesión") */
+    font-size: 1.8rem;
+    margin-bottom: 5px;
+    border-bottom: 2px solid rgba(245, 158, 11, 0.3);
+    padding-bottom: 12px;
+}
+
+.tarjeta-legal h2 {
+    color: #38bdf8; /* Azul brillante secundario para mantener contraste técnico */
+    margin-top: 30px;
+    font-size: 1.2rem;
+    letter-spacing: 0.5px;
+}
+
+.tarjeta-legal p, 
+.tarjeta-legal li {
+    color: #cbd5e1; /* Gris claro de alta legibilidad para evitar fatiga visual */
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+.tarjeta-legal ul {
+    margin-left: 20px;
+    padding-left: 0;
+}
+
+.ultima-actualizacion {
+    font-size: 0.85rem;
+    color: #94a3b8;
+    margin-bottom: 25px;
+    font-style: italic;
+}
+
+/* Enlaces dentro del texto legal */
+.tarjeta-legal a {
+    color: #38bdf8;
+    text-decoration: none;
+}
+
+.tarjeta-legal a:hover {
+    text-decoration: underline;
+}
+
+/* Botón de retorno al registro */
+.btn-volver {
+    display: inline-block !important;
+    background-color: #f59e0b !important; /* Color naranja principal del botón */
+    color: #ffffff !important; /* Texto oscuro para contraste perfecto */
+    font-weight: bold !important;
+    padding: 12px 30px !important;
+    border-radius: 8px !important;
+    text-decoration: none   !important;
+    transition: background 0.3s ease, transform 0.2s ease !important;
+    box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3) !important; /* Sombra sutil para dar profundidad */
+}
+
+.btn-volver:hover {
+    background-color: #d97706 !important; /* Tono naranja más oscuro al pasar el cursor */
+    transform: translateY(-2px) !important; /* Efecto de elevación al pasar el cursor */
+}

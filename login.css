@@ -1,177 +1,287 @@
-*{
+
+* {
     box-sizing: border-box;
-}
-header {
-    background-color: #fa790f;
-    text-align: center;
-    padding: 10px 10px;
-}
-
-.logo-container{
-    display: flex;
-    align-items: center;
-    gap: 15;
-}
-.texto{
-    display: flex;
-    flex-direction: column;
-
-}
-.logo{
-    width: 170px;
-    height: auto;
-}
-.titulo{
-    color: #061583;
-    text-align: center;
-    font-size: 80px;
-    margin: 0;
-    margin-left: 350px;
-    font-family: 'Pacifico',cursive;
-    font-weight: 400;
-}
-.parrafo{
-    color:#061583;
-    text-align: center;
-    font-size: 20px;
-    margin: 0;
-    margin-left: 320px;
-    font-family: 'Dancing Script', cursive;
-    font-weight: 400;
 }
 
 body {
     margin: 0;
+    min-height: 100vh;
     font-family: Arial, sans-serif;
-    background-color: #d2d4d8;
-    color: #292929;
-}
-header a {
-    display: block;
-    text-align: left;
-    color: #302312;
-    text-decoration: none;
+    background: #030a17;
+    color: white;
 }
 
-header h1 {
-    margin-bottom: 5px;
+header.logo-container {
+    display: none;
 }
 
 .contenedor {
-    width: 90%;
-    max-width: 480px;
-    margin: 30px auto;
+    position: relative;
+    isolation: isolate;
+    width: 100%;
+    min-height: 100vh;
+    padding: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    background: #030a17;
+    overflow: visible;
+}
+
+.contenedor::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 72%;
+    height: 100%;
+    background-image:
+        linear-gradient(
+            90deg,
+            transparent 45%,
+            rgba(3, 10, 23, 0.15) 65%,
+            #030a17 100%
+        ),
+        url("img/tigre.jpeg");
+        background-repeat: no-repeat;
+        background-position: center, left 7%;
+        background-size: cover, contain;
+}
+
+.imagen-tigre {
+    display: none;
+}
+
+.texto {
+    position: absolute;
+    z-index: 2;
+    left: 3%;
+    bottom: 0px;
+    width: 65%;
+    text-align: center;
+}
+
+.titulo {
+    margin: 0 0 10px;
+    color: #ff7900;
+    font-family: 'Pacifico', cursive;
+    font-size: clamp(32px, 3vw, 46px);
+    font-weight: 400;
+}
+
+.parrafo {
+    margin: 0;
+    color: white;
+    font-family: 'Dancing Script', cursive;
+    font-size: clamp(16px, 1.5vw, 22px);
 }
 
 .formulario {
-    background-color: white;
-    padding: 25px;
-    margin-bottom: 25px;
-    border-radius: 14px;
-    box-shadow: 0 3px 12px #00000010;
+    position: relative;
+    z-index: 3;
+    flex: 0 0 460px;
+    width: 460px;
+    max-width: 100%;
+    padding: 32px;
+    background: rgba(7, 20, 41, 0.96);
+    border: 1px solid #28496f;
+    border-radius: 20px;
+    box-shadow: 0 0 28px #00000050;
 }
 
-h2 {
-    color: #1605b0;
+.formulario h2 {
+    margin: 0 0 16px;
+    color: #ff8617;
+    font-size: 36px;
 }
 
+.formulario p {
+    color: #d5deeb;
+    line-height: 1.5;
+}
+
+/* Campos del formulario */
 form {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 12px;
 }
 
-label {
-    margin-top: 8px;
+form > label {
+    margin-top: 10px;
+    color: #f0f4fa;
     font-weight: bold;
 }
 
-input {
-    padding: 12px;
-    border: 1px solid #00000010;
-    border-radius: 8px;
-    font-size: 16px;
+.input-container,
+.password-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    min-width: 0;
+    min-height: 50px;
+    background: #101f36;
+    border: 1px solid #3b587c;
+    border-radius: 9px;
 }
 
-button {
-    margin-top: 12px;
+.input-container:focus-within,
+.password-wrapper:focus-within {
+    border-color: #168cff;
+    box-shadow: 0 0 8px #168cff40;
+}
+
+.input-container input,
+.password-wrapper input {
+    width: 100%;
+    min-width: 0;
     padding: 13px;
-    border: none;
-    border-radius: 8px;
-    background-color: #879dbb;
-    color: white;
-    font-size: 16px;
+    border: none !important;
+    outline: none !important;
+    background: transparent !important;
+    color: white !important;
+    font-size: 14px;
+}
+
+.input-container input::placeholder,
+.password-wrapper input::placeholder {
+    color: #91a3ba;
+}
+
+.domain-fixed {
+    flex-shrink: 0;
+    padding: 0 10px 0 0;
+    color: #aabbd0;
+    font-size: 11px;
+    white-space: nowrap;
+}
+
+/* Icono para mostrar u ocultar contraseña */
+.password-wrapper button {
+    position: absolute !important;
+    top: 50% !important;
+    right: 8px !important;
+    transform: translateY(-50%) !important;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    margin: 0 !important;
+    padding: 5px !important;
+    background: transparent !important;
+    border: none !important;
+    color: #9bb4d2 !important;
     cursor: pointer;
 }
 
-button:hover {
-    background-color: #879DBB;
+.password-wrapper button:hover {
+    color: #ff8617 !important;
 }
 
-.nota {
-    text-align: center;
+form > button[type="submit"] {
+    width: 100%;
+    padding: 14px;
+    margin-top: 12px;
+    background: #ff7908;
+    color: #07152b;
+    border: none;
+    border-radius: 9px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+form > button[type="submit"]:hover {
+    background: #ff9b3c;
+}
+
+.OMC {
+    margin-top: 18px;
+    text-align: right;
     font-size: 14px;
 }
 
 a {
-    color: #286744;
+    color: #ff941f;
+    text-decoration: none;
 }
 
-.confirmaciones {
-    margin: 20px 0;
-    text-align: left;
-}
-
-.opcion-confirmacion {
-    display: flex;
-    align-items: flex-start;
-    gap: 8px;
-    margin-bottom: 15px;
-    font-size: 14px;
-    line-height: 1.5;
-}
-
-.opcion-confirmacion input {
-    margin-top: 4px;
-    flex-shrink: 0;
-    accent-color: #287a3e;
-}
-
-.opcion-confirmacion a {
-    color: #287a3e;
+a:hover {
     text-decoration: underline;
 }
 
-.opcion-confirmacion a:hover {
-    color: #174c27;
-}
-.input-container {
-    display: inline-flex;
-    align-items: center;
-    border: 1px solid #7c7c7c;
-    border-radius: 9px;
-    padding: 4px;
-    background-color: #2b3035; 
+.nota {
+    margin-top: 25px;
+    text-align: center;
+    font-size: 13px;
 }
 
-.input-container input {
-    border: none !important;      
-    outline: none !important;     
-    background: transparent !important; 
-    color: #ffffff !important;
-    font-size: 14px;
-    width: 150px; 
+/* Adaptación para tabletas */
+@media (max-width: 1000px) {
+    .contenedor {
+        padding: 25px;
+    }
+
+    .contenedor::before {
+        width: 68%;
+    }
+
+    .formulario {
+        flex-basis: 400px;
+        width: 400px;
+        padding: 25px;
+    }
+
+    .texto {
+        left: 2%;
+        width: 62%;
+    }
 }
 
-.input-container .domain-fixed {
-    color: #7c7c7c; 
-    font-size: 14px;
-    user-select: none;
-    white-space: nowrap;
-    margin-left: 130px;
-}
-input[type="password"]::-ms-reveal,
-input[type="password"]::-ms-clear {
-    display: none;
-    margin-top: 10px;
+/* Adaptación para celulares */
+@media (max-width: 700px) {
+    .contenedor {
+        width: 100%;
+        min-height: 100vh;
+        padding: 25px 16px 180px;
+        justify-content: center;
+    }
+
+    .contenedor::before {
+        width: 100%;
+        height: 100%;
+        background-image:
+            linear-gradient(
+                rgba(3, 10, 23, 0.35),
+                rgba(3, 10, 23, 0.8)
+            ),
+            url("img/tigre.jpeg");
+        background-position: center;
+        background-size: cover;
+    }
+
+    .formulario {
+        flex: 0 1 460px;
+        width: 100%;
+        padding: 25px 20px;
+    }
+
+    .formulario h2 {
+        font-size: 30px;
+    }
+
+    .texto {
+        left: 5%;
+        bottom: 25px;
+        width: 90%;
+    }
+
+    .titulo {
+        font-size: 30px;
+    }
+
+    .parrafo {
+        font-size: 16px;
+    }
 }

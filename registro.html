@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mi cuenta | Tigre Market</title>
     <link rel="stylesheet" href="registro.css">
+    <script src="registro.js" defer></script>
 </head>
 <body>
 
@@ -120,133 +121,6 @@
         </p>
     </section>
     </main>
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-        
-            const formularioRegistro = document.getElementById("registro");
-        
-            if (formularioRegistro) {
-                formularioRegistro.addEventListener("submit", function(evento) {
-                    evento.preventDefault();
-        
-                    window.location.href = "./login.html";
-                });
-            }   
-        });
-
-    </script>
-        <script>
-    const passwordInput = document.getElementById('contrasena');
-    const reqlongitud = document.getElementById('req-longitud');
-    const reqmayuscula = document.getElementById('req-mayuscula');
-    const reqminuscula = document.getElementById('req-minuscula');
-    const reqnumero = document.getElementById('req-numero');
-    const reqespecial =document.getElementById('req-especial');
-
-    passwordInput.addEventListener('input', function() {
-        const password = passwordInput.value;
-
-        if (password.length >= 8) {
-            reqlongitud.classList.remove('invalido');
-            reqlongitud.classList.add('valido');
-        } else {
-            reqlongitud.classList.remove('valido');
-            reqlongitud.classList.add('invalido');
-        }
-
-        if (/[A-Z]/.test(password)) {
-            reqmayuscula.classList.remove('invalido');
-            reqmayuscula.classList.add('valido');   
-        } else {
-            reqmayuscula.classList.remove('valido');
-            reqmayuscula.classList.add('invalido');
-        }
-
-        if (/[a-z]/.test(password)) {
-            reqminuscula.classList.remove('invalido');
-            reqminuscula.classList.add('valido');
-        } else {
-            reqminuscula.classList.remove('valido');
-            reqminuscula.classList.add('invalido');
-        }
-
-        if (/\d/.test(password)) {
-            reqnumero.classList.remove('invalido');
-            reqnumero.classList.add('valido');
-        } else {
-            reqnumero.classList.remove('valido');
-            reqnumero.classList.add('invalido');
-        }
-        if (/\@/.test(password)){
-            reqespecial.classList.remove('invalido');
-            reqespecial.classList.add('valido');
-        } else {
-            reqespecial.classList.remove('valido');
-            reqespecial.classList.add('invalido');
-        }
-
-    });
-    
-    </script>
-    <script>
-    document.addEventListener("DOMContentLoaded", function() {
-        const togglePasswordBtn = document.getElementById('toggle-password');
-        const passwordInput = document.getElementById('contrasena');
-        const eyeIcon = document.getElementById('eye-icon');
-
-        // Verificación de seguridad para evitar errores en consola
-        if (!togglePasswordBtn || !passwordInput || !eyeIcon) {
-            console.error("Error: No se encontró alguno de los elementos del botón de contraseña en el DOM.");
-            return;
-        }
-
-        togglePasswordBtn.addEventListener('click', function() {
-            // Alternar el tipo de input entre password y text
-            const currentType = passwordInput.getAttribute('type');
-            const newType = currentType === 'password' ? 'text' : 'password';
-            passwordInput.setAttribute('type', newType);
-            
-            // Cambiar el dibujo del icono SVG según el estado
-            if (newType === 'text') {
-                eyeIcon.innerHTML = `
-                    <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"></path>
-                    <line x1="1" y1="1" x2="23" y2="23"></line>
-                `;
-            } else {
-                eyeIcon.innerHTML = `
-                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
-                    <circle cx="12" cy="12" r="3"></circle>
-                `;
-            }
-        });
-    });
-</script>
-    <script>
-    const formularioLogin = document.getElementById('login');
-
-    formularioLogin.addEventListener('submit', function(event) {
-        event.preventDefault();
-
-        const inputusuario = document.getElementById('correo-login').value.trim();
-
-        const dominioInstitucional = "@tecnaucalpan.mx";
-
-        if (inputusuario === "") {
-            alert("Por favor, ingresa tu usuario.");
-            return;
-        }
-
-        const correoCompleto = inputusuario + dominioInstitucional;
-        console.log("Correo listo para enviar al servidor:", correoCompleto);
-        alert("¡Acceso correcto! Correo completo: " + correoCompleto);
-        const inputUsuario = document.getElementById('correo-login');
-
-    inputUsuario.addEventListener('input', function(event) {
-        let valorLimpio = this.value.toLowerCase().replace(/[^a-z0-9_]/g, '');
-    
-        this.value = valorLimpio;
-});
-    });
     </script>
 
     <script type="module">
