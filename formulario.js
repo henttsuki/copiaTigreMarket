@@ -1,5 +1,4 @@
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
+    document.addEventListener("DOMContentLoaded", function() {
         
             const formularioLogin = document.getElementById("login");
         
@@ -37,4 +36,3 @@
         this.value = valorLimpio;
 });
     });
-</script>
