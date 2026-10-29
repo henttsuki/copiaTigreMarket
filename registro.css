@@ -39,23 +39,20 @@ header.container {
     justify-content: center;
 }
 
-header.container .logo-img {
-    max-width: 260px;
-    height: auto;
-    filter: drop-shadow(0 0 25px rgba(56, 189, 248, 0.3));
-}
 
 header.container .title {
-    font-size: 2rem;
+    font-size: 100px;
     color: #f59e0b; /* Naranja corporativo brillante */
     margin-top: 15px;
     letter-spacing: 0.5px;
+    text-shadow: 2px 2px 4px rgb(255, 106, 0); /* Sombra sutil para resaltar el texto */
 }
 
 header.container .subtitle {
-    color: #94a3b8;
-    font-size: 0.95rem;
+    color: #ffffff;
+    font-size: 25px;
     margin-top: 5px;
+    text-shadow: 1px 1px 8px rgb(255, 94, 0); /* Sombra ligera para el subtítulo */
 }
 
 section.formulario {
@@ -256,4 +253,18 @@ input[type="password"]::-webkit-credentials-auto-fill-button {
     pointer-events: none;
     position: absolute;
     right: 0;
+}
+/*Parte de la imagen de fondo del registro*/
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('img/tigre.jpeg'); 
+    background-size: cover;
+    background-position: center;
+    filter: blur(12px);
+    z-index: -1;      
 }

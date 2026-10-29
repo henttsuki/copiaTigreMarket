@@ -285,3 +285,22 @@ a:hover {
         font-size: 16px;
     }
 }
+/* Oculta el botón nativo de revelación de contraseña en Microsoft Edge y navegadores Chromium */
+input[type="password"]::-ms-reveal,
+input[type="password"]::-ms-clear {
+    display: none !important;
+}
+
+/* Oculta el icono de autocomllenado y revelación en WebKit/Edge moderno */
+input[type="password"]::-webkit-textfield-decoration-container {
+    /* Oculta contenedores decorativos si interfieren */
+}
+
+input[type="password"]::-webkit-credentials-auto-fill-button,
+input[type="password"]::-webkit-caps-lock-indicator {
+    visibility: hidden !important;
+    display: none !important;
+    pointer-events: none !important;
+    position: absolute !important;
+    right: 0 !important;
+}
