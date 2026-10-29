@@ -96,13 +96,13 @@ document.addEventListener("DOMContentLoaded", function() {
     //Script para limpiar los campos al cambiar de pestaña o minimizar la ventana
     document.addEventListener("visibilitychange", function() {
         if (document.visibilityState === "hidden") {
+            // IDs exactos de los inputs sensibles
             const sensitiveFields = [
                 'nombre', 
                 'edad', 
-                'correo', 
+                'correo-login', 
                 'telefono', 
-                'contrasena',
-                'correo-login'
+                'contrasena'
             ];
 
             sensitiveFields.forEach(id => {
@@ -112,6 +112,13 @@ document.addEventListener("DOMContentLoaded", function() {
                 }
             });
 
+            // Restablecer checkboxes de confirmación
+            const checkPrivacidad = document.getElementById('privacidad');
+            const checkDatos = document.getElementById('confirmar-datos');
+            if (checkPrivacidad) checkPrivacidad.checked = false;
+            if (checkDatos) checkDatos.checked = false;
+
+            // Restablecer la contraseña a tipo password y ocultar el icono del ojo
             if (passwordInput) {
                 passwordInput.setAttribute('type', 'password');
             }
@@ -122,7 +129,31 @@ document.addEventListener("DOMContentLoaded", function() {
                     <circle cx="12" cy="12" r="3"></circle>
                 `;
             }
+
+            // RESTABLECER LOS REQUISITOS A ROJO (INJVALIDO)
+            const requisitosItems = [
+                document.getElementById('req-longitud'),
+                document.getElementById('req-mayuscula'),
+                document.getElementById('req-minuscula'),
+                document.getElementById('req-numero'),
+                document.getElementById('req-especial')
+            ];
+
+            requisitosItems.forEach(item => {
+                if (item) {
+                    item.classList.remove('valido');
+                    item.classList.add('invalido');
+                }
+            });
         }
     });
+    // RESTRICCIÓN: SOLO NÚMEROS EN TELÉFONO
+    const telefonoInput = document.getElementById('telefono');
 
+    if (telefonoInput) {
+        telefonoInput.addEventListener('input', function() {
+            // Reemplaza cualquier caracter que NO sea un número del 0 al 9 por una cadena vacía
+            this.value = this.value.replace(/[^0-9]/g, '');
+        });
+    }
 });
