@@ -1,193 +1,259 @@
+
 * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #f7f5f0;
-    color: #292929;
+    background-color: #0b1329; /* Fondo azul oscuro profundo idéntico al login */
+    color: #ffffff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
 }
 
-header {
-    background-color: #1E3A8A;
+/* ESTRUCTURA PRINCIPAL DE DOS COLUMNAS */
+main.contenedor {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 1050px;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+/* Columna Izquierda: Header / Marca (Logotipo del Tigre) */
+header.container {
+    flex: 1;
     text-align: center;
-    padding: 25px 15px;
-}
-header a {
-    display: block;
-    text-align: left;
-    color: #e3ded6;
-    text-decoration: none;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
-header h1 {
+header.container .logo-img {
+    max-width: 260px;
+    height: auto;
+    filter: drop-shadow(0 0 25px rgba(56, 189, 248, 0.3));
+}
+
+header.container .title {
+    font-size: 2rem;
+    color: #f59e0b; /* Naranja corporativo brillante */
+    margin-top: 15px;
+    letter-spacing: 0.5px;
+}
+
+header.container .subtitle {
+    color: #94a3b8;
+    font-size: 0.95rem;
+    margin-top: 5px;
+}
+
+section.formulario {
+    flex: 1;
+    min-width: 380px;
+    background: rgba(15, 23, 42, 0.85); /* Tarjeta translúcida */
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(245, 158, 11, 0.25); /* Sutil borde naranja */
+    border-radius: 16px;
+    padding: 35px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+}
+
+section.formulario h2 {
+    color: #f59e0b; /* Título principal en naranja */
+    font-size: 1.6rem;
     margin-bottom: 5px;
 }
 
-.contenedor {
-    width: 90%;
-    max-width: 480px;
-    margin: 30px auto;
+section.formulario > p {
+    color: #94a3b8;
+    font-size: 0.85rem;
+    margin-bottom: 20px;
 }
 
-.formulario {
-    background-color: white;
-    padding: 25px;
-    margin-bottom: 25px;
-    border-radius: 14px;
-    box-shadow: 0 3px 12px #00000010;
+/* Etiquetas y campos de entrada */
+label {
+    display: block;
+    font-size: 0.85rem;
+    color: #e2e8f0;
+    margin-bottom: 6px;
+    font-weight: 600;
 }
 
-h2 {
-    color: #286744;
+input[type="text"],
+input[type="number"],
+input[type="tel"],
+input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    background: rgba(30, 41, 59, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    color: #ffffff;
+    font-size: 0.9rem;
+    outline: none;
+    transition: border-color 0.3s;
+    margin-bottom: 15px;
 }
 
-form {
+input:focus {
+    border-color: #f59e0b; /* Borde naranja al enfocar */
+}
+
+/* Contenedor especial para el correo con dominio fijo */
+.input-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background: rgba(30, 41, 59, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    margin-bottom: 15px;
+    overflow: hidden;
+}
+
+.input-container input {
+    background: transparent;
+    border: none;
+    margin-bottom: 0;
+    padding-right: 140px; /* Espacio para que el texto no choque con el dominio */
+}
+
+.input-container input:focus {
+    border-color: transparent;
+}
+
+.domain-fixed {
+    position: absolute;
+    right: 12px;
+    color: #94a3b8;
+    font-size: 0.85rem;
+    pointer-events: none;
+}
+
+/* Contenedor de la contraseña y botón del ojo */
+.password-wrapper {
+    margin-bottom: 15px;
+}
+
+.password-wrapper button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #94a3b8;
+    padding: 0 10px;
+}
+
+.password-wrapper button:hover {
+    color: #ffffff;
+}
+
+#lista-requisitos {
+    list-style: none;
+    font-size: 0.75rem;
+    margin: 5px 0 15px 0;
+    padding: 0;
+}
+
+#lista-requisitos li {
+    margin-bottom: 3px;
+    transition: color 0.3s;
+}
+
+#lista-requisitos li.invalido {
+    color: #ef4444; /* Rojo suave para error */
+}
+
+#lista-requisitos li.valido {
+    color: #22c55e; /* Verde brillante para éxito */
+}
+
+.confirmaciones {
+    margin: 15px 0;
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
 
-label {
-    margin-top: 8px;
-    font-weight: bold;
-}
-
-input {
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    font-size: 16px;
-}
-
-button {
-    margin-top: 12px;
-    padding: 13px;
-    border: none;
-    border-radius: 8px;
-    background-color: #286744;
-    color: white;
-    font-size: 16px;
+.opcion-confirmacion {
+    font-size: 0.8rem;
+    color: #cbd5e1;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: normal;
     cursor: pointer;
 }
 
-button:hover {
-    background-color: #1d5034;
+.opcion-confirmacion input[type="checkbox"] {
+    accent-color: #f59e0b; /* Color naranja para el checkbox */
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}
+
+.opcion-confirmacion a {
+    color: #38bdf8;
+    text-decoration: none;
+}
+
+.opcion-confirmacion a:hover {
+    text-decoration: underline;
+}
+
+button[type="submit"] {
+    width: 100%;
+    background-color: #f59e0b; /* Naranja principal corporativo */
+    color: #0b1329; /* Texto oscuro para contraste perfecto */
+    font-weight: bold;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+    box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3);
+    margin-top: 5px;
+}
+
+button[type="submit"]:hover {
+    background-color: #d97706;
+    transform: translateY(-2px);
 }
 
 .nota {
     text-align: center;
-    font-size: 14px;
+    margin-top: 15px;
+    font-size: 0.85rem;
+    color: #94a3b8;
 }
 
-a {
-    color: #286744;
-}
-.confirmaciones {
-    margin: 20px 0;
-    text-align: left;
+.nota a {
+    color: #38bdf8;
+    text-decoration: none;
 }
 
-.opcion-confirmacion {
-    display: flex;
-    align-items: flex-start;
-    gap: 8px;
-    margin-bottom: 15px;
-    font-size: 14px;
-    line-height: 1.5;
-}
-
-.opcion-confirmacion input {
-    margin-top: 4px;
-    flex-shrink: 0;
-    accent-color: #287a3e;
-}
-
-.opcion-confirmacion a {
-    color: #287a3e;
+.nota a:hover {
     text-decoration: underline;
 }
-
-.opcion-confirmacion a:hover {
-    color: #174c27;
-}
-
-#lista-requisitos {
-    list-style-type: none;
-    padding-left: 0;
-    margin-top: 10px;
-    font-size: 14px;
-}
-#lista-requisitos li.invalido {
-    color: #ff0a02;
-}
-#lista-requisitos li.valido {
-    color: #0bbd3b;
-}
-#lista-requisitos li::before {
-    content: "✓";
-    font-weight: bold;
-}
-#lista-requisitos li.invalido::before {
-    content: "✗";
-    font-weight: bold;
-}
-.container{
-    display: flex;
-    align-items: center;
-    gap: 15px;
-}
-.text{
-    display: flex;
-    flex-direction: column;
-}
-.logo-img{
-    width: 130px;
-    height: auto;
-}
-.title{
-    font-family: 'Pacifico', cursive;
-    color: #e3ded6;
-    font-size: 80px;
-    margin: 0;
-    text-align: left;
-    margin-left: 330px;
-}
-.subtitle{
-    font-family: 'Dancing Script', cursive;
-    color: #e3ded6;
-    font-size: 20px;
-    margin: 0;
-    text-align: left;
-    margin-left: 370px;
-}
-.input-container {
-    display: inline-flex;
-    align-items: center;
-    border: 1px solid #7c7c7c;
-    border-radius: 9px;
-    padding: 4px;
-    background-color: #2b3035; 
-}
-.input-container input {
-    border: none !important;      
-    outline: none !important;     
-    background: transparent !important; 
-    color: #ffffff !important;
-    font-size: 14px;
-    width: 150px; 
-}
-
-.input-container .domain-fixed {
-    color: #7c7c7c; 
-    font-size: 14px;
-    user-select: none;
-    white-space: nowrap;
-    margin-left: 130px;
-}
-input[type="password"]::-ms-reveal,
-input[type="password"]::-ms-clear {
+/* Oculta el botón de contraseña nativo en Microsoft Edge e Internet Explorer */
+input[type="password"]::-ms-reveal {
     display: none;
-    margin-top: 10px;
+}
+
+/* Oculta el botón nativo en algunos navegadores basados en WebKit si llega a aparecer */
+input[type="password"]::-webkit-credentials-auto-fill-button {
+    visibility: hidden;
+    pointer-events: none;
+    position: absolute;
+    right: 0;
 }
