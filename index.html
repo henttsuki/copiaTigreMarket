@@ -9,16 +9,45 @@
 </head>
 <body>
 
-    <header>
-        <h1>Tigre Market 🐯</h1>
-        <p>Compra y vende entre estudiantes universitarios GTU</p>
-    </header>
+    <header class="encabezado">
+    <img src="img/logo landing page.png" alt="Logo Tigre Market" class="logo">
 
+    <div class="texto-encabezado">
+        <h1>Tigre Market</h1>
+        <p>Compra y vende entre estudiantes universitarios GTU</p>
+    </div>
+
+    <nav>
+        <a href="index.html">
+            <img src="iconos/inicio.png" alt=""> Inicio
+         </a>
+
+        <a href="compras.html">
+            <img src="iconos/compras.png" alt=""> Compras
+        </a>
+
+        <a href="venta.html">
+            <img src="iconos/vender.png" alt=""> Vender
+        </a>
+
+        <a href="carrito.html">
+            <img src="iconos/carrito.png" alt=""> Carrito
+        </a>
+
+        <a href="#">
+            <img src="iconos/usuario.png" alt=""> Mi cuenta
+        </a>
+    </nav>
+
+    </header>
     
 <section class="busqueda-inicio">
-    <h2>¿Qué estás buscando?</h2>
+    <h2>¿Qué estás <span class="texto-naranja">buscando?</span></h2>
 
-    <form id="formulario-busqueda">
+<form id="formulario-busqueda">
+
+    <div class="campo-busqueda">
+        <img src="iconos/busqueda.png" alt="">
         <input
             type="search"
             id="busqueda-producto"
@@ -26,20 +55,13 @@
             aria-label="Buscar productos"
             required
         >
+    </div>
 
-        <button type="submit">Buscar 🔎</button>
-    </form>
+    <button type="submit">
+        <img src="iconos/busqueda.png" alt=""> Buscar
+    </button>
+</form>
 </section>
-
-
-    <nav>
-        <a href="index.html">Inicio</a>
-        <a href="compras.html">Compras</a>
-        <a href="venta.html">Vender</a>
-        <a href="carrito.html">Carrito</a>
-        <a href="#">Mi cuenta</a>
-    </nav>
-    
 
     <main>
         <h2 id="productos">Encuentra lo que necesitas</h2>
