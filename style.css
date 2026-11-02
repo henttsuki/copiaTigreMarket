@@ -1,127 +1,349 @@
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #f4f5f7;
-    color: #222;
+
+@font-face {
+    font-family: 'TitanOne';
+    src: url('fonts/TitanOne-Regular.ttf') format('truetype');
 }
 
-header {
-    background-color:blue  ;
+@font-face {
+    font-family: 'Orbitron';
+    src: url('fonts/Orbitron-VariableFont_wght.ttf') format('truetype');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
     color: white;
-    text-align: center;
-    padding: 30px;
+    font-family: Arial, sans-serif;
+    background:
+        radial-gradient(ellipse at 15% 30%, rgba(255, 119, 25, 0.25), transparent 45%),
+        radial-gradient(ellipse at 85% 65%, rgba(30, 115, 220, 0.30), transparent 45%),
+        linear-gradient(135deg, #030712, #102744, #080f1d);
+    background-attachment: fixed;
+}
+
+/* ENCABEZADO */
+.encabezado {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 20px;
+    padding: 25px 60px;
+    background: rgba(0, 4, 10, 0.78);
+    border-bottom: 2px solid #f47721;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.5);
+}
+
+.logo {
+    width: 145px;
+    height: 145px;
+    object-fit: contain;
+    mix-blend-mode: screen;
+}
+
+.texto-encabezado {
+    text-align: left;
+}
+
+.texto-encabezado h1 {
+    font-family: 'TitanOne', sans-serif;
+    font-size: 60px;
+    font-weight: normal;
+    color: #ffad00;
+    background: linear-gradient(
+        to bottom,
+        #fff0a3 0%,
+        #ffbd24 25%,
+        #ff8500 65%,
+        #d94b00 100%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 3px 0 #a94300)
+            drop-shadow(0 6px 0 #713000)
+            drop-shadow(0 9px 5px rgba(0,0,0,0.8));
+}
+
+.texto-encabezado p {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 14px;
+    color: white;
+    letter-spacing: 1px;
+    margin-top: 20px;
+}
+
+.texto-naranja {
+    color: #ff8525;
 }
 
 nav {
-    background-color: white;
-    padding: 18px;
-    text-align: center;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 25px;
+    padding: 18px 20px 18px 60px;
+    margin-left: auto;
+    background: #080f1d;
+    border-bottom: 1px solid #263c59;
 }
 
 nav a {
-    color: #ef7b07;
-    text-decoration: none;
-    margin: 15px;
-    font-weight: bold;
-}
-
-main {
-    padding: 30px;
-}
-
-h2 {
-    color: #17452b;
-}
-
-.productos {
     display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
+    align-items: center;
+    white-space: nowrap;
+    color: #e8edf5;
+    text-decoration: none;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 13px;
+    padding: 10px 18px;
+    border-radius: 30px;
+    transition: all 0.3s ease;
 }
 
-.producto {
-    background-color: white;
-    padding: 20px;
-    border-radius: 10px;
-    width: 230px;
-    box-shadow: 0 2px 8px #00000015;
+nav a img {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+    margin-right: 6px;
+    flex-shrink: 0;
+    filter: invert(54%) sepia(94%) saturate(1200%) hue-rotate(348deg) brightness(101%) contrast(102%);
+    transition: 0.3s ease;
 }
 
-.precio {
-    color: #21854b;
-    font-weight: bold;
+nav a:hover {
+    background-color: #ff8525;
+    color: #080f1d;
+    box-shadow: 0 0 15px rgba(255, 133, 37, 0.5);
 }
 
-button {
-    background-color: #21854b;
-    color: white;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
+nav a:hover img {
+    filter: invert(48%) sepia(91%) saturate(1800%) hue-rotate(195deg) brightness(100%) contrast(105%);
+    transform: scale(1.15);
 }
-
-button:hover {
-    background-color: #145b32;
-}
-
-footer {
-    background-color: #17452b;
-    color: white;
-    text-align: center;
-    padding: 15px;
-    margin-top: 30px;
-}
-
 
 .busqueda-inicio {
-    max-width: 700px;
-    margin: 35px auto;
-    padding: 25px;
     text-align: center;
+    padding: 55px 20px;
+    background: linear-gradient(120deg, rgba(10, 24, 45, 0.88), rgba(19, 49, 80, 0.88));
+    border-bottom: 1px solid rgba(55, 133, 220, 0.4);
 }
 
 .busqueda-inicio h2 {
-    margin-bottom: 18px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 28px;
+    margin-bottom: 25px;
+    text-shadow: 0 0 15px rgba(45, 135, 235, 0.5);
 }
 
 #formulario-busqueda {
     display: flex;
-    gap: 10px;
-    max-width: 600px;
-    margin: 0 auto;
+    justify-content: center;
+    max-width: 650px;
+    margin: auto;
+    gap: 0;
+}
+
+.campo-busqueda {
+    display: flex;
+    align-items: center;
+    width: 80%;
+    padding-left: 15px;
+    background: #f4f6fa;
+    border: 2px solid #287bc5;
+    border-radius: 50px 0 0 50px;
+}
+
+.campo-busqueda img {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    filter: invert(54%) sepia(94%) saturate(1200%) hue-rotate(348deg);
 }
 
 #busqueda-producto {
-    flex: 1;
-    min-width: 0;
-    padding: 14px 16px;
-    border: 2px solid #dddddd;
-    border-radius: 10px;
-    font-size: 16px;
+    width: 100%;
+    padding: 16px;
+    background: transparent;
+    border: none;
+    border-radius: 0;
     outline: none;
-}
-
-#busqueda-producto:focus {
-    border-color: #e9a23b;
+    font-size: 15px;
+    font-family: 'Orbitron', sans-serif;
 }
 
 #formulario-busqueda button {
-    padding: 14px 20px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 15px 25px;
     border: none;
-    border-radius: 10px;
-    background-color: #286744;
+    border-radius: 0 50px 50px 0;
+    background: #f47721;
     color: white;
-    font-size: 16px;
+    font-weight: bold;
     cursor: pointer;
+    transition: 0.3s;
+    font-family: 'Orbitron', sans-serif;
+}
+
+#formulario-busqueda button img {
+    width: 18px;
+    height: 18px;
+    filter: brightness(0) invert(1);
+    transition: 0.3s ease;
 }
 
 #formulario-busqueda button:hover {
-    background-color: #1d5034;
+    background: #ff923e;
+    box-shadow: 0 0 18px rgba(255, 119, 25, 0.6);
 }
 
-@media (max-width: 480px) {
+#formulario-busqueda button:hover img {
+    transform: scale(1.15);
+}
+
+main {
+    padding: 55px 25px;
+    text-align: center;
+    background: transparent;
+}
+
+main h2 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 29px;
+    color: #ff8a2b;
+    margin-bottom: 12px;
+}
+
+main > p {
+    color: #c5d0df;
+    margin-bottom: 40px;
+}
+
+.productos {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 35px;
+}
+
+.producto {
+    width: 330px;
+    padding: 22px;
+    background: linear-gradient(145deg, #203b5c, #101c30, #17243a);
+    border: 1px solid rgba(255, 133, 37, 0.5);
+    border-radius: 18px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease;
+}
+
+.producto:hover {
+    transform: translateY(-8px);
+    border-color: #ff8525;
+    box-shadow: 0 0 20px rgba(255, 133, 37, 0.35);
+}
+
+.producto h3 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 17px;
+    margin-bottom: 18px;
+}
+
+.foto-producto {
+    width: 100%;
+    height: 185px;
+    object-fit: contain;
+    background: #e9edf3;
+    border-radius: 9px;
+    margin-bottom: 15px;
+}
+
+.producto p {
+    color: #cbd5e2;
+    margin-bottom: 12px;
+}
+
+.producto .precio {
+    color: #ff9b45;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.producto button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 9px;
+    border: none;
+    border-radius: 7px;
+    background: #287bc5;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.producto button:hover {
+    background: #398fdf;
+}
+
+.producto button.agregar {
+    background: #f47721;
+}
+
+.producto button.agregar:hover {
+    background: #ff923e;
+}
+
+footer {
+    padding: 25px;
+    text-align: center;
+    color: #aebbd0;
+    background: rgba(5, 12, 25, 0.95);
+    border-top: 2px solid #f47721;
+}
+
+@media (max-width: 600px) {
+    .encabezado {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .texto-encabezado {
+        text-align: center;
+    }
+
+    .texto-encabezado h1 {
+        font-size: 38px;
+    }
+
+    .logo {
+        width: 120px;
+        height: 120px;
+    }
+
+    nav {
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
     #formulario-busqueda {
         flex-direction: column;
+        gap: 10px;
+    }
+
+    .campo-busqueda,
+    #formulario-busqueda button {
+        width: 100%;
+        border-radius: 8px;
+    }
+
+    .producto {
+        width: 100%;
+        max-width: 320px;
     }
 }
