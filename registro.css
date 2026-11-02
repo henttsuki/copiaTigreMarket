@@ -1,4 +1,16 @@
 
+@font-face {
+    font-family: 'TitanOne';
+    src: url('fonts/TitanOne-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Orbitron';
+    src: url('fonts/Orbitron-VariableFont_wght.ttf') format('truetype');
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -41,14 +53,31 @@ header.container {
 
 
 header.container .title {
+    font-family: 'TitanOne', sans-serif;
     font-size: 100px;
-    color: #f59e0b; /* Naranja corporativo brillante */
+    font-weight: normal;
     margin-top: 15px;
     letter-spacing: 0.5px;
-    text-shadow: 2px 2px 4px rgb(255, 106, 0); /* Sombra sutil para resaltar el texto */
-}
 
+    background: linear-gradient(
+        to bottom,
+        #fff0a3 0%,
+        #ffbd24 25%,
+        #ff8500 65%,
+        #d94b00 100%
+    );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    filter: drop-shadow(0 3px 0 #a94300)
+            drop-shadow(0 6px 0 #713000)
+            drop-shadow(0 9px 5px rgba(0,0,0,0.8));
+}
 header.container .subtitle {
+     font-family: 'Orbitron', sans-serif;
+    margin-top: 20px;
     color: #ffffff;
     font-size: 25px;
     margin-top: 5px;

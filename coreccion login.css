@@ -1,4 +1,14 @@
 
+@font-face {
+    font-family: 'TitanOne';
+    src: url('fonts/TitanOne-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Orbitron';
+    src: url('fonts/Orbitron-VariableFont_wght.ttf') format('truetype');
+}
+
 * {
     box-sizing: border-box;
 }
@@ -6,7 +16,7 @@
 body {
     margin: 0;
     min-height: 100vh;
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background: #030a17;
     color: white;
 }
@@ -64,30 +74,46 @@ header.logo-container {
 
 .titulo {
     margin: 0 0 10px;
-    color: #ff7900;
-    font-family: 'Pacifico', cursive;
+    font-family: 'TitanOne', sans-serif;
     font-size: clamp(32px, 3vw, 46px);
-    font-weight: 400;
-}
+    font-weight: normal;
 
+    background: linear-gradient(
+        to bottom,
+        #fff0a3 0%,
+        #ffbd24 25%,
+        #ff8500 65%,
+        #d94b00 100%
+    );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    filter: drop-shadow(0 3px 0 #a94300)
+            drop-shadow(0 6px 0 #713000)
+            drop-shadow(0 9px 5px rgba(0,0,0,0.8));
+}
 .parrafo {
     margin: 0;
+    font-family: 'Orbitron', sans-serif;
     color: white;
-    font-family: 'Dancing Script', cursive;
     font-size: clamp(16px, 1.5vw, 22px);
 }
 
 .formulario {
     position: relative;
     z-index: 3;
-    flex: 0 0 460px;
-    width: 460px;
+    flex: 0 0 500px;
+    width: 500px;
     max-width: 100%;
-    padding: 32px;
+    padding: 8px 30px;
     background: rgba(7, 20, 41, 0.96);
     border: 1px solid #28496f;
     border-radius: 20px;
     box-shadow: 0 0 28px #00000050;
+    margin-right: 50px;
+
 }
 
 .formulario h2 {
@@ -105,7 +131,7 @@ header.logo-container {
 form {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 3px;
 }
 
 form > label {
@@ -181,8 +207,8 @@ form > label {
 
 form > button[type="submit"] {
     width: 100%;
-    padding: 14px;
-    margin-top: 12px;
+     margin-top: 3px;
+    padding: 8px;
     background: #ff7908;
     color: #07152b;
     border: none;
@@ -217,7 +243,6 @@ a:hover {
     font-size: 13px;
 }
 
-/* Adaptación para tabletas */
 @media (max-width: 1000px) {
     .contenedor {
         padding: 25px;
@@ -285,5 +310,3 @@ a:hover {
         font-size: 16px;
     }
 }
-
-
