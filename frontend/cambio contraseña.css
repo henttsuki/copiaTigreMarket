@@ -1,0 +1,254 @@
+
+@font-face {
+    font-family: 'TitanOne';
+    src: url('fonts/TitanOne-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Orbitron';
+    src: url('fonts/Orbitron-VariableFont_wght.ttf') format('truetype');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    color: white;
+    background: #030a17;
+}
+
+.contenedor {
+    position: relative;
+    isolation: isolate;
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 140px 20px 40px;
+    overflow: hidden;
+    background: #030a17;
+}
+
+.contenedor::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -2;
+
+    background-image: url("img/tigre.jpeg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+
+.contenedor::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+
+    background: linear-gradient(
+        135deg,
+        rgba(3, 10, 23, 0.55),
+        rgba(3, 10, 23, 0.82)
+    );
+}
+
+.container {
+    position: absolute;
+    top: 35px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+}
+
+    .title {
+    font-family: 'TitanOne', sans-serif;
+    font-size: 85px;
+    font-weight: normal;
+    color: #ffad00;
+
+    background: linear-gradient(
+        to bottom,
+        #fff0a3 0%,
+        #ffbd24 25%,
+        #ff8500 65%,
+        #d94b00 100%
+    );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    filter: drop-shadow(0 3px 0 #a94300)
+            drop-shadow(0 6px 0 #713000)
+            drop-shadow(0 9px 5px rgba(0,0,0,0.8));
+}
+
+.subtitle {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 16px;
+    color: white;
+    letter-spacing: 1px;
+    margin-top: 20px;
+}
+
+.formulario {
+    width: 100%;
+    max-width: 480px;
+    padding: 35px;
+
+    background: rgba(7, 20, 41, 0.94);
+
+    border: 1px solid #ffffff;
+    border-top: 1px solid #ffffff;
+    border-radius: 18px;
+
+    box-shadow:
+        0 0 5px #ffffff,
+        0 0 15px #ffffff80,
+        0 0 30px #ffffff40;
+}
+
+.formulario h2 {
+    text-align: center;
+    color: #ff8617;
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+.formulario > p {
+    text-align: center;
+    color: #d5deeb;
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+form label {
+    display: block;
+    color: #f0f4fa;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.input-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    min-height: 48px;
+
+    background: #101f36;
+    border: 1px solid #3b587c;
+    border-radius: 8px;
+
+    overflow: hidden;
+}
+
+.input-container:focus-within {
+    border-color: #f5f7f9;
+    box-shadow: 0 0 8px rgba(22, 140, 255, 0.3);
+}
+
+.input-container input {
+    width: 100%;
+    min-width: 0;
+    padding: 12px;
+
+    background: transparent;
+    border: none;
+    outline: none;
+
+    color: white;
+    font-size: 14px;
+}
+
+.input-container input::placeholder {
+    color: #91a3ba;
+}
+
+.domain-fixed {
+    padding-right: 10px;
+    color: #aabbd0;
+    font-size: 12px;
+    white-space: nowrap;
+}
+
+form button[type="submit"] {
+    width: 100%;
+    margin-top: 25px;
+    padding: 14px;
+
+    background: #ff7908;
+    color: #07152b;
+
+    border: none;
+    border-radius: 9px;
+
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+
+    transition: background 0.3s ease;
+}
+
+form button[type="submit"]:hover {
+    background: #ff9b3c;
+}
+
+.nota {
+    margin-top: 25px;
+    text-align: center;
+    color: #d5deeb;
+    font-size: 14px;
+}
+
+.nota a {
+    color: #ff941f;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.nota a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+    .container {
+        top: 25px;
+        padding: 0 12px;
+    }
+
+    .title {
+        font-size: 32px;
+    }
+
+    .subtitle {
+        font-size: 14px;
+    }
+
+    .contenedor {
+        padding: 130px 15px 30px;
+    }
+
+    .formulario {
+        padding: 25px 20px;
+    }
+
+    .formulario h2 {
+        font-size: 24px;
+    }
+
+    .domain-fixed {
+        font-size: 10px;
+        padding-right: 6px;
+    }
+}
+
+/*cambio de contraseña correcto*/

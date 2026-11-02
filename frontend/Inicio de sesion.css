@@ -1,4 +1,14 @@
 
+@font-face {
+    font-family: 'TitanOne';
+    src: url('fonts/TitanOne-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Orbitron';
+    src: url('fonts/Orbitron-VariableFont_wght.ttf') format('truetype');
+}
+
 * {
     box-sizing: border-box;
 }
@@ -20,12 +30,12 @@ header.logo-container {
     isolation: isolate;
     width: 100%;
     min-height: 100vh;
-    padding: 35px;
+    padding: 30px 100px;
     display: flex;
     align-items: center;
     justify-content: flex-end;
     background: #030a17;
-    overflow: visible;
+    overflow: hidden;
 }
 
 .contenedor::before {
@@ -36,6 +46,7 @@ header.logo-container {
     left: 0;
     width: 72%;
     height: 100%;
+
     background-image:
         linear-gradient(
             90deg,
@@ -44,9 +55,10 @@ header.logo-container {
             #030a17 100%
         ),
         url("img/tigre.jpeg");
-        background-repeat: no-repeat;
-        background-position: center, left 7%;
-        background-size: cover, contain;
+
+    background-repeat: no-repeat;
+    background-position: center, left 7%;
+    background-size: cover, contain;
 }
 
 .imagen-tigre {
@@ -57,7 +69,7 @@ header.logo-container {
     position: absolute;
     z-index: 2;
     left: 3%;
-    bottom: 0px;
+    bottom: 30px;
     width: 65%;
     text-align: center;
 }
@@ -65,53 +77,80 @@ header.logo-container {
 .titulo {
     margin: 0 0 10px;
     color: #ff7900;
-    font-family: 'Pacifico', cursive;
-    font-size: clamp(32px, 3vw, 46px);
-    font-weight: 400;
+
+    font-family: 'TitanOne', cursive;
+    font-size: clamp(40px, 4.5vw, 65px);
+    font-weight: normal;
+
+    background: linear-gradient(
+        180deg,
+        #fff0a3,
+        #ffbd24,
+        #ff8500,
+        #d94b00
+    );
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    filter: drop-shadow(3px 4px 2px #713000);
 }
 
 .parrafo {
     margin: 0;
-    color: white;
-    font-family: 'Dancing Script', cursive;
-    font-size: clamp(16px, 1.5vw, 22px);
+    color: #dce6f5;
+
+    font-family: 'Orbitron', sans-serif;
+    font-size: clamp(13px, 1.3vw, 19px);
+    font-weight: 500;
+
+    text-shadow: 0 0 8px #168cff50;
 }
 
 .formulario {
     position: relative;
     z-index: 3;
-    flex: 0 0 460px;
-    width: 460px;
-    max-width: 100%;
-    padding: 32px;
-    background: rgba(7, 20, 41, 0.96);
-    border: 1px solid #28496f;
-    border-radius: 20px;
-    box-shadow: 0 0 28px #00000050;
-}
 
+    flex: 0 0 420px;
+    width: 420px;
+    max-width: 100%;
+
+    padding: 23px 28px;
+
+    background: rgba(7, 20, 41, 0.96);
+
+    border: 1px solid #00aaff;
+    border-radius: 16px;
+
+    box-shadow:
+        0 0 8px #00aaff,
+        0 0 20px #008cff,
+        0 0 40px #005eff,
+        inset 0 0 8px #008cff30;
+}
 .formulario h2 {
-    margin: 0 0 16px;
+    margin: 0 0 8px;
     color: #ff8617;
-    font-size: 36px;
+    font-size: 29px;
 }
 
 .formulario p {
+    margin: 8px 0;
     color: #d5deeb;
-    line-height: 1.5;
+    line-height: 1.4;
 }
 
-/* Campos del formulario */
 form {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 8px;
 }
 
 form > label {
-    margin-top: 10px;
+    margin-top: 5px;
     color: #f0f4fa;
     font-weight: bold;
+    font-size: 14px;
 }
 
 .input-container,
@@ -119,12 +158,14 @@ form > label {
     position: relative;
     display: flex;
     align-items: center;
+
     width: 100%;
     min-width: 0;
-    min-height: 50px;
+    min-height: 45px;
+
     background: #101f36;
     border: 1px solid #3b587c;
-    border-radius: 9px;
+    border-radius: 8px;
 }
 
 .input-container:focus-within,
@@ -137,11 +178,15 @@ form > label {
 .password-wrapper input {
     width: 100%;
     min-width: 0;
-    padding: 13px;
+
+    padding: 11px;
+
     border: none !important;
     outline: none !important;
+
     background: transparent !important;
     color: white !important;
+
     font-size: 14px;
 }
 
@@ -152,25 +197,30 @@ form > label {
 
 .domain-fixed {
     flex-shrink: 0;
-    padding: 0 10px 0 0;
+    padding: 0 9px 0 0;
+
     color: #aabbd0;
     font-size: 11px;
     white-space: nowrap;
 }
 
-/* Icono para mostrar u ocultar contraseña */
 .password-wrapper button {
     position: absolute !important;
     top: 50% !important;
     right: 8px !important;
+
     transform: translateY(-50%) !important;
+
     display: flex !important;
     align-items: center;
     justify-content: center;
+
     margin: 0 !important;
     padding: 5px !important;
+
     background: transparent !important;
     border: none !important;
+
     color: #9bb4d2 !important;
     cursor: pointer;
 }
@@ -181,14 +231,19 @@ form > label {
 
 form > button[type="submit"] {
     width: 100%;
-    padding: 14px;
-    margin-top: 12px;
+    padding: 12px;
+
+    margin-top: 8px;
+
     background: #ff7908;
     color: #07152b;
+
     border: none;
-    border-radius: 9px;
-    font-size: 16px;
+    border-radius: 8px;
+
+    font-size: 15px;
     font-weight: bold;
+
     cursor: pointer;
 }
 
@@ -197,9 +252,9 @@ form > button[type="submit"]:hover {
 }
 
 .OMC {
-    margin-top: 18px;
+    margin-top: 12px !important;
     text-align: right;
-    font-size: 14px;
+    font-size: 13px;
 }
 
 a {
@@ -212,12 +267,11 @@ a:hover {
 }
 
 .nota {
-    margin-top: 25px;
+    margin-top: 12px !important;
     text-align: center;
     font-size: 13px;
 }
 
-/* Adaptación para tabletas */
 @media (max-width: 1000px) {
     .contenedor {
         padding: 25px;
@@ -228,9 +282,9 @@ a:hover {
     }
 
     .formulario {
-        flex-basis: 400px;
-        width: 400px;
-        padding: 25px;
+        flex-basis: 390px;
+        width: 390px;
+        padding: 22px;
     }
 
     .texto {
@@ -239,36 +293,39 @@ a:hover {
     }
 }
 
-/* Adaptación para celulares */
 @media (max-width: 700px) {
     .contenedor {
         width: 100%;
         min-height: 100vh;
+
         padding: 25px 16px 180px;
+
         justify-content: center;
     }
 
     .contenedor::before {
         width: 100%;
         height: 100%;
+
         background-image:
             linear-gradient(
                 rgba(3, 10, 23, 0.35),
                 rgba(3, 10, 23, 0.8)
             ),
             url("img/tigre.jpeg");
+
         background-position: center;
         background-size: cover;
     }
 
     .formulario {
-        flex: 0 1 460px;
+        flex: 0 1 420px;
         width: 100%;
-        padding: 25px 20px;
+        padding: 22px 20px;
     }
 
     .formulario h2 {
-        font-size: 30px;
+        font-size: 27px;
     }
 
     .texto {
@@ -278,22 +335,17 @@ a:hover {
     }
 
     .titulo {
-        font-size: 30px;
+        font-size: 35px;
     }
 
     .parrafo {
-        font-size: 16px;
+        font-size: 13px;
     }
 }
-/* Oculta el botón nativo de revelación de contraseña en Microsoft Edge y navegadores Chromium */
+
 input[type="password"]::-ms-reveal,
 input[type="password"]::-ms-clear {
     display: none !important;
-}
-
-/* Oculta el icono de autocomllenado y revelación en WebKit/Edge moderno */
-input[type="password"]::-webkit-textfield-decoration-container {
-    /* Oculta contenedores decorativos si interfieren */
 }
 
 input[type="password"]::-webkit-credentials-auto-fill-button,
@@ -304,3 +356,5 @@ input[type="password"]::-webkit-caps-lock-indicator {
     position: absolute !important;
     right: 0 !important;
 }
+
+/* correcto login*/
