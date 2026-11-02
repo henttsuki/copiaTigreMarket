@@ -1,0 +1,360 @@
+
+@font-face {
+    font-family: 'TitanOne';
+    src: url('fonts/TitanOne-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Orbitron';
+    src: url('fonts/Orbitron-VariableFont_wght.ttf') format('truetype');
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    background: #030a17;
+    color: white;
+}
+
+header.logo-container {
+    display: none;
+}
+
+.contenedor {
+    position: relative;
+    isolation: isolate;
+    width: 100%;
+    min-height: 100vh;
+    padding: 30px 100px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    background: #030a17;
+    overflow: hidden;
+}
+
+.contenedor::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 72%;
+    height: 100%;
+
+    background-image:
+        linear-gradient(
+            90deg,
+            transparent 45%,
+            rgba(3, 10, 23, 0.15) 65%,
+            #030a17 100%
+        ),
+        url("img/tigre.jpeg");
+
+    background-repeat: no-repeat;
+    background-position: center, left 7%;
+    background-size: cover, contain;
+}
+
+.imagen-tigre {
+    display: none;
+}
+
+.texto {
+    position: absolute;
+    z-index: 2;
+    left: 3%;
+    bottom: 30px;
+    width: 65%;
+    text-align: center;
+}
+
+.titulo {
+    margin: 0 0 10px;
+    color: #ff7900;
+
+    font-family: 'TitanOne', cursive;
+    font-size: clamp(40px, 4.5vw, 65px);
+    font-weight: normal;
+
+    background: linear-gradient(
+        180deg,
+        #fff0a3,
+        #ffbd24,
+        #ff8500,
+        #d94b00
+    );
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    filter: drop-shadow(3px 4px 2px #713000);
+}
+
+.parrafo {
+    margin: 0;
+    color: #dce6f5;
+
+    font-family: 'Orbitron', sans-serif;
+    font-size: clamp(13px, 1.3vw, 19px);
+    font-weight: 500;
+
+    text-shadow: 0 0 8px #168cff50;
+}
+
+.formulario {
+    position: relative;
+    z-index: 3;
+
+    flex: 0 0 420px;
+    width: 420px;
+    max-width: 100%;
+
+    padding: 23px 28px;
+
+    background: rgba(7, 20, 41, 0.96);
+
+    border: 1px solid #00aaff;
+    border-radius: 16px;
+
+    box-shadow:
+        0 0 8px #00aaff,
+        0 0 20px #008cff,
+        0 0 40px #005eff,
+        inset 0 0 8px #008cff30;
+}
+.formulario h2 {
+    margin: 0 0 8px;
+    color: #ff8617;
+    font-size: 29px;
+}
+
+.formulario p {
+    margin: 8px 0;
+    color: #d5deeb;
+    line-height: 1.4;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+form > label {
+    margin-top: 5px;
+    color: #f0f4fa;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.input-container,
+.password-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    width: 100%;
+    min-width: 0;
+    min-height: 45px;
+
+    background: #101f36;
+    border: 1px solid #3b587c;
+    border-radius: 8px;
+}
+
+.input-container:focus-within,
+.password-wrapper:focus-within {
+    border-color: #168cff;
+    box-shadow: 0 0 8px #168cff40;
+}
+
+.input-container input,
+.password-wrapper input {
+    width: 100%;
+    min-width: 0;
+
+    padding: 11px;
+
+    border: none !important;
+    outline: none !important;
+
+    background: transparent !important;
+    color: white !important;
+
+    font-size: 14px;
+}
+
+.input-container input::placeholder,
+.password-wrapper input::placeholder {
+    color: #91a3ba;
+}
+
+.domain-fixed {
+    flex-shrink: 0;
+    padding: 0 9px 0 0;
+
+    color: #aabbd0;
+    font-size: 11px;
+    white-space: nowrap;
+}
+
+.password-wrapper button {
+    position: absolute !important;
+    top: 50% !important;
+    right: 8px !important;
+
+    transform: translateY(-50%) !important;
+
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+
+    margin: 0 !important;
+    padding: 5px !important;
+
+    background: transparent !important;
+    border: none !important;
+
+    color: #9bb4d2 !important;
+    cursor: pointer;
+}
+
+.password-wrapper button:hover {
+    color: #ff8617 !important;
+}
+
+form > button[type="submit"] {
+    width: 100%;
+    padding: 12px;
+
+    margin-top: 8px;
+
+    background: #ff7908;
+    color: #07152b;
+
+    border: none;
+    border-radius: 8px;
+
+    font-size: 15px;
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+form > button[type="submit"]:hover {
+    background: #ff9b3c;
+}
+
+.OMC {
+    margin-top: 12px !important;
+    text-align: right;
+    font-size: 13px;
+}
+
+a {
+    color: #ff941f;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.nota {
+    margin-top: 12px !important;
+    text-align: center;
+    font-size: 13px;
+}
+
+@media (max-width: 1000px) {
+    .contenedor {
+        padding: 25px;
+    }
+
+    .contenedor::before {
+        width: 68%;
+    }
+
+    .formulario {
+        flex-basis: 390px;
+        width: 390px;
+        padding: 22px;
+    }
+
+    .texto {
+        left: 2%;
+        width: 62%;
+    }
+}
+
+@media (max-width: 700px) {
+    .contenedor {
+        width: 100%;
+        min-height: 100vh;
+
+        padding: 25px 16px 180px;
+
+        justify-content: center;
+    }
+
+    .contenedor::before {
+        width: 100%;
+        height: 100%;
+
+        background-image:
+            linear-gradient(
+                rgba(3, 10, 23, 0.35),
+                rgba(3, 10, 23, 0.8)
+            ),
+            url("img/tigre.jpeg");
+
+        background-position: center;
+        background-size: cover;
+    }
+
+    .formulario {
+        flex: 0 1 420px;
+        width: 100%;
+        padding: 22px 20px;
+    }
+
+    .formulario h2 {
+        font-size: 27px;
+    }
+
+    .texto {
+        left: 5%;
+        bottom: 25px;
+        width: 90%;
+    }
+
+    .titulo {
+        font-size: 35px;
+    }
+
+    .parrafo {
+        font-size: 13px;
+    }
+}
+
+input[type="password"]::-ms-reveal,
+input[type="password"]::-ms-clear {
+    display: none !important;
+}
+
+input[type="password"]::-webkit-credentials-auto-fill-button,
+input[type="password"]::-webkit-caps-lock-indicator {
+    visibility: hidden !important;
+    display: none !important;
+    pointer-events: none !important;
+    position: absolute !important;
+    right: 0 !important;
+}
+
+/* correcto login*/
