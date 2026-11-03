@@ -1,16 +1,19 @@
 
-import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
+import { initializeApp } from "https://www.gstatic.com/firebasejs/13.1.0/firebase-app.js";
+import { getAuth } from "https://www.gstatic.com/firebasejs/13.1.0/firebase-auth.js";
+import { getFirestore } from "https://www.gstatic.com/firebasejs/13.1.0/firebase-firestore.js";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyD0cvEwY8cSQQ19NShBHdX_pzwhkvDvka0",
-  authDomain: "tigre-market-c389c.firebaseapp.com",
-  projectId: "tigre-market-c389c",
-  storageBucket: "tigre-market-c389c.firebasestorage.app",
-  messagingSenderId: "1002919608362",
-  appId: "1:1002919608362:web:7d6b59af58524183990353",
-  measurementId: "G-3VM1KYWQ49"
+  apiKey: "AIzaSyBnRAQ9ZX82hOCqnML9QqPfBIJNzhSXIHU",
+  authDomain: "tiger-market-73a36.firebaseapp.com",
+  projectId: "tiger-market-73a36",
+  storageBucket: "tiger-market-73a36.firebasestorage.app",
+  messagingSenderId: "219212142513",
+  appId: "1:219212142513:web:364f290d2cc6188c9f8f90",
+  measurementId: "G-N0SN077EY6"
 };
 
 const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
+
+export const auth = getAuth(app);
+export const db = getFirestore(app);

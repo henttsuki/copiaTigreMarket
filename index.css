@@ -54,7 +54,7 @@ header.logo-container {
             rgba(3, 10, 23, 0.15) 65%,
             #030a17 100%
         ),
-        url("img/tigre.jpeg");
+        url("/frontend/img/tigre.jpeg");
 
     background-repeat: no-repeat;
     background-position: center, left 7%;

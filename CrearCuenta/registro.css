@@ -1,0 +1,270 @@
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #0b1329; /* Fondo azul oscuro profundo idéntico al login */
+    color: #ffffff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* ESTRUCTURA PRINCIPAL DE DOS COLUMNAS */
+main.contenedor {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 1050px;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+/* Columna Izquierda: Header / Marca (Logotipo del Tigre) */
+header.container {
+    flex: 1;
+    text-align: center;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+header.container .title {
+    font-size: 100px;
+    color: #f59e0b; /* Naranja corporativo brillante */
+    margin-top: 15px;
+    letter-spacing: 0.5px;
+    text-shadow: 2px 2px 4px rgb(255, 106, 0); /* Sombra sutil para resaltar el texto */
+}
+
+header.container .subtitle {
+    color: #ffffff;
+    font-size: 25px;
+    margin-top: 5px;
+    text-shadow: 1px 1px 8px rgb(255, 94, 0); /* Sombra ligera para el subtítulo */
+}
+
+section.formulario {
+    flex: 1;
+    min-width: 380px;
+    background: rgba(15, 23, 42, 0.85); /* Tarjeta translúcida */
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(245, 158, 11, 0.25); /* Sutil borde naranja */
+    border-radius: 16px;
+    padding: 35px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+}
+
+section.formulario h2 {
+    color: #f59e0b; /* Título principal en naranja */
+    font-size: 1.6rem;
+    margin-bottom: 5px;
+}
+
+section.formulario > p {
+    color: #94a3b8;
+    font-size: 0.85rem;
+    margin-bottom: 20px;
+}
+
+/* Etiquetas y campos de entrada */
+label {
+    display: block;
+    font-size: 0.85rem;
+    color: #e2e8f0;
+    margin-bottom: 6px;
+    font-weight: 600;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="tel"],
+input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    background: rgba(30, 41, 59, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    color: #ffffff;
+    font-size: 0.9rem;
+    outline: none;
+    transition: border-color 0.3s;
+    margin-bottom: 15px;
+}
+
+input:focus {
+    border-color: #f59e0b; /* Borde naranja al enfocar */
+}
+
+/* Contenedor especial para el correo con dominio fijo */
+.input-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background: rgba(30, 41, 59, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    margin-bottom: 15px;
+    overflow: hidden;
+}
+
+.input-container input {
+    background: transparent;
+    border: none;
+    margin-bottom: 0;
+    padding-right: 140px; /* Espacio para que el texto no choque con el dominio */
+}
+
+.input-container input:focus {
+    border-color: transparent;
+}
+
+.domain-fixed {
+    position: absolute;
+    right: 12px;
+    color: #94a3b8;
+    font-size: 0.85rem;
+    pointer-events: none;
+}
+
+/* Contenedor de la contraseña y botón del ojo */
+.password-wrapper {
+    margin-bottom: 15px;
+}
+
+.password-wrapper button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #94a3b8;
+    padding: 0 10px;
+}
+
+.password-wrapper button:hover {
+    color: #ffffff;
+}
+
+#lista-requisitos {
+    list-style: none;
+    font-size: 0.75rem;
+    margin: 5px 0 15px 0;
+    padding: 0;
+}
+
+#lista-requisitos li {
+    margin-bottom: 3px;
+    transition: color 0.3s;
+}
+
+#lista-requisitos li.invalido {
+    color: #ef4444; /* Rojo suave para error */
+}
+
+#lista-requisitos li.valido {
+    color: #22c55e; /* Verde brillante para éxito */
+}
+
+.confirmaciones {
+    margin: 15px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.opcion-confirmacion {
+    font-size: 0.8rem;
+    color: #cbd5e1;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: normal;
+    cursor: pointer;
+}
+
+.opcion-confirmacion input[type="checkbox"] {
+    accent-color: #f59e0b; /* Color naranja para el checkbox */
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}
+
+.opcion-confirmacion a {
+    color: #38bdf8;
+    text-decoration: none;
+}
+
+.opcion-confirmacion a:hover {
+    text-decoration: underline;
+}
+
+button[type="submit"] {
+    width: 100%;
+    background-color: #f59e0b; /* Naranja principal corporativo */
+    color: #0b1329; /* Texto oscuro para contraste perfecto */
+    font-weight: bold;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+    box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3);
+    margin-top: 5px;
+}
+
+button[type="submit"]:hover {
+    background-color: #d97706;
+    transform: translateY(-2px);
+}
+
+.nota {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 0.85rem;
+    color: #94a3b8;
+}
+
+.nota a {
+    color: #38bdf8;
+    text-decoration: none;
+}
+
+.nota a:hover {
+    text-decoration: underline;
+}
+/* Oculta el botón de contraseña nativo en Microsoft Edge e Internet Explorer */
+input[type="password"]::-ms-reveal {
+    display: none;
+}
+
+/* Oculta el botón nativo en algunos navegadores basados en WebKit si llega a aparecer */
+input[type="password"]::-webkit-credentials-auto-fill-button {
+    visibility: hidden;
+    pointer-events: none;
+    position: absolute;
+    right: 0;
+}
+/*Parte de la imagen de fondo del registro*/
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('img/tigre.jpeg'); 
+    background-size: cover;
+    background-position: center;
+    filter: blur(12px);
+    z-index: -1;      
+}
